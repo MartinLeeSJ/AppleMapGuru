@@ -12,6 +12,11 @@
 		5B78A99B29A343BC00F2517C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B78A99A29A343BC00F2517C /* Assets.xcassets */; };
 		5B78A99E29A343BC00F2517C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B78A99D29A343BC00F2517C /* Preview Assets.xcassets */; };
 		5B78A9A529A3467300F2517C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78A9A429A3467300F2517C /* MapView.swift */; };
+		5B78A9A729A3977900F2517C /* UndimmedPresentationDetent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78A9A629A3977900F2517C /* UndimmedPresentationDetent.swift */; };
+		5B78A9A929A398F100F2517C /* Ex+UISheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78A9A829A398F100F2517C /* Ex+UISheetPresentationController.swift */; };
+		5B78A9AB29A3990B00F2517C /* Ex+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78A9AA29A3990B00F2517C /* Ex+Collection.swift */; };
+		5B78A9AD29A39B3700F2517C /* Ex+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78A9AC29A39B3700F2517C /* Ex+View.swift */; };
+		5B78A9AF29A39B6600F2517C /* UndimmedDetentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78A9AE29A39B6600F2517C /* UndimmedDetentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +26,11 @@
 		5B78A99A29A343BC00F2517C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B78A99D29A343BC00F2517C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B78A9A429A3467300F2517C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		5B78A9A629A3977900F2517C /* UndimmedPresentationDetent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndimmedPresentationDetent.swift; sourceTree = "<group>"; };
+		5B78A9A829A398F100F2517C /* Ex+UISheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UISheetPresentationController.swift"; sourceTree = "<group>"; };
+		5B78A9AA29A3990B00F2517C /* Ex+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Collection.swift"; sourceTree = "<group>"; };
+		5B78A9AC29A39B3700F2517C /* Ex+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+View.swift"; sourceTree = "<group>"; };
+		5B78A9AE29A39B6600F2517C /* UndimmedDetentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndimmedDetentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +67,7 @@
 				5B78A99829A343BA00F2517C /* ContentView.swift */,
 				5B78A9A429A3467300F2517C /* MapView.swift */,
 				5B78A99A29A343BC00F2517C /* Assets.xcassets */,
+				5B78A9B029A39B7700F2517C /* UndimmedSheet */,
 				5B78A99C29A343BC00F2517C /* Preview Content */,
 			);
 			path = AppleMapGuru;
@@ -68,6 +79,18 @@
 				5B78A99D29A343BC00F2517C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5B78A9B029A39B7700F2517C /* UndimmedSheet */ = {
+			isa = PBXGroup;
+			children = (
+				5B78A9A629A3977900F2517C /* UndimmedPresentationDetent.swift */,
+				5B78A9AE29A39B6600F2517C /* UndimmedDetentView.swift */,
+				5B78A9A829A398F100F2517C /* Ex+UISheetPresentationController.swift */,
+				5B78A9AA29A3990B00F2517C /* Ex+Collection.swift */,
+				5B78A9AC29A39B3700F2517C /* Ex+View.swift */,
+			);
+			path = UndimmedSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +163,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B78A9AD29A39B3700F2517C /* Ex+View.swift in Sources */,
+				5B78A9A729A3977900F2517C /* UndimmedPresentationDetent.swift in Sources */,
 				5B78A99929A343BA00F2517C /* ContentView.swift in Sources */,
+				5B78A9AB29A3990B00F2517C /* Ex+Collection.swift in Sources */,
 				5B78A9A529A3467300F2517C /* MapView.swift in Sources */,
+				5B78A9AF29A39B6600F2517C /* UndimmedDetentView.swift in Sources */,
+				5B78A9A929A398F100F2517C /* Ex+UISheetPresentationController.swift in Sources */,
 				5B78A99729A343BA00F2517C /* AppleMapGuruApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

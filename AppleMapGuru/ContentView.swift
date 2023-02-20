@@ -9,8 +9,7 @@ import SwiftUI
 import MapKit
 
 enum MapConfig: String, CaseIterable, Identifiable {
-    case standard = "standard"
-    case hybrid, imagery
+    case standard = "standard", hybrid, imagery
     
     var id: Self { self }
     
@@ -34,34 +33,128 @@ enum MapConfig: String, CaseIterable, Identifiable {
 struct ContentView: View {
     @State private var mapConfig: MapConfig = .standard
     
+    @State private var showSearchSheet: Bool = true
+    @State private var showMapConfigSheet: Bool = false
+    
+    @State private var sheetHeight: PresentationDetent = .height(50)
+    @State private var configSheetHeight: PresentationDetent = .medium
+    @State private var searchText: String = ""
+    
     var body: some View {
-        GeometryReader { geo in
-            let width = geo.size.width
-            
-            ZStack {
-                Color.black
-                    .edgesIgnoringSafeArea(.all)
-                MapView(mapConfig: $mapConfig)
-                    .edgesIgnoringSafeArea(.vertical)
-                    .overlay(alignment: .top) {
-                        Picker(selection: $mapConfig) {
-                            ForEach(MapConfig.allCases) { map in
-                                Text(map.firstUpperCased)
+        NavigationStack {
+            GeometryReader { geo in
+                let width = geo.size.width
+                let height = geo.size.height
+                
+                ZStack {
+                    Color.black
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    MapView(mapConfig: $mapConfig)
+                        .edgesIgnoringSafeArea(.vertical)
+                        .overlay(alignment: .topTrailing) {
+                            Button {
+                                showMapConfigSheet = true
+                            } label: {
+                                buttonImage
+                                    .font(.title3)
+                                    .padding(10)
+                                    .background {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(.white.opacity(0.8))
+                                    }
                             }
-                        } label: {
-                            Text("보이는 맵 종류 설정")
+                            .padding(.vertical, height * 0.08)
+                            .padding(.horizontal, 20)
+                            .sheet(isPresented: $showMapConfigSheet) {
+                                MapConfigSheetView(mapConfig: $mapConfig)
+                                    .interactiveDismissDisabled(false)
+                                    .presentationDetents(
+                                        undimmed: [.medium, .large],
+                                        largestUndimmed: .height(20),
+                                        selection: $configSheetHeight
+                                    )
+                            }
                         }
-                    .pickerStyle(.segmented)
-                    .frame(width: width * 0.7)
-
                 }
             }
+            
+            .sheet(isPresented: $showSearchSheet) {
+                SearchSheetView(searchText: $searchText)
+                    .interactiveDismissDisabled(!showMapConfigSheet)
+                    .presentationDetents(
+                        undimmed: [.height(20), .height(100), .medium, .large],
+                        selection: $sheetHeight
+                    )
+            }
+            
+            
         }
+    }
+    
+    var buttonImage: some View {
+        switch mapConfig {
+        case .standard:
+            return Image(systemName: "map")
+        case .hybrid:
+            return Image(systemName: "network")
+        case .imagery:
+            return Image(systemName: "globe.asia.australia.fill")
+        }
+    }
+    
+    
+}
+
+struct SearchSheetView: View {
+    @Binding var searchText: String
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                
+            }
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer,
+                prompt: "장소 및 주소검색"
+            )
+            
+        }
+    }
+}
+
+struct MapConfigSheetView: View {
+    @Binding var mapConfig: MapConfig
+    var body: some View {
+        HStack {
+            Button {
+                mapConfig = .standard
+            } label: {
+                Text("일반지도")
+            }
+            
+            Button {
+                mapConfig = .hybrid
+            } label: {
+                Text("하이브리드")
+            }
+            
+            Button {
+                mapConfig = .imagery
+            } label: {
+                Text("위성")
+            }
+
+        }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        NavigationStack {
+            ContentView()
+        }
     }
 }
