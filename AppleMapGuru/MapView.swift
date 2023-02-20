@@ -8,20 +8,38 @@
 import SwiftUI
 import MapKit
 
+final class MapViewCoordinator: NSObject, MKMapViewDelegate {
+    var mapViewCoordinator: MapView
+    
+    init(_ control: MapView) {
+        self.mapViewCoordinator = control
+    }
+}
+
 struct MapView: UIViewRepresentable {
+    @Binding var mapConfig: MapConfig
+    
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView(frame: .zero)
+        mapView.preferredConfiguration = mapConfig.mkmapConfig
+        
+        
         return mapView
     }
     
-    func updateUIView(_ uiView: MKMapView, context: Context) {
-        
+    func updateUIView(_ mapView: MKMapView, context: Context) {
+        mapView.preferredConfiguration = mapConfig.mkmapConfig
     }
     
+    func makeCoordinator() -> MapViewCoordinator {
+        MapViewCoordinator(self)
+    }
 }
+
+
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(mapConfig: .constant(MapConfig.standard))
     }
 }
