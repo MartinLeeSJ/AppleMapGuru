@@ -17,6 +17,11 @@
 		5B78A9AB29A3990B00F2517C /* Ex+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78A9AA29A3990B00F2517C /* Ex+Collection.swift */; };
 		5B78A9AD29A39B3700F2517C /* Ex+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78A9AC29A39B3700F2517C /* Ex+View.swift */; };
 		5B78A9AF29A39B6600F2517C /* UndimmedDetentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78A9AE29A39B6600F2517C /* UndimmedDetentView.swift */; };
+		5BC5A66C29A6663100B3B9AC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A66B29A6663100B3B9AC /* LocationService.swift */; };
+		5BC5A66E29A6677D00B3B9AC /* MapConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A66D29A6677D00B3B9AC /* MapConfig.swift */; };
+		5BC5A67029A667FA00B3B9AC /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A66F29A667FA00B3B9AC /* SearchViewModel.swift */; };
+		5BC5A67429A6685000B3B9AC /* SearchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A67329A6685000B3B9AC /* SearchSheetView.swift */; };
+		5BC5A67629A6687C00B3B9AC /* MapConfigSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5A67529A6687C00B3B9AC /* MapConfigSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		5B78A9AA29A3990B00F2517C /* Ex+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Collection.swift"; sourceTree = "<group>"; };
 		5B78A9AC29A39B3700F2517C /* Ex+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+View.swift"; sourceTree = "<group>"; };
 		5B78A9AE29A39B6600F2517C /* UndimmedDetentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndimmedDetentView.swift; sourceTree = "<group>"; };
+		5BC5A66B29A6663100B3B9AC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		5BC5A66D29A6677D00B3B9AC /* MapConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfig.swift; sourceTree = "<group>"; };
+		5BC5A66F29A667FA00B3B9AC /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		5BC5A67329A6685000B3B9AC /* SearchSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSheetView.swift; sourceTree = "<group>"; };
+		5BC5A67529A6687C00B3B9AC /* MapConfigSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfigSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,10 @@
 			children = (
 				5B78A99629A343BA00F2517C /* AppleMapGuruApp.swift */,
 				5B78A99829A343BA00F2517C /* ContentView.swift */,
+				5BC5A67529A6687C00B3B9AC /* MapConfigSheetView.swift */,
+				5BC5A67329A6685000B3B9AC /* SearchSheetView.swift */,
+				5BC5A67229A6682B00B3B9AC /* Enums */,
+				5BC5A67129A6682000B3B9AC /* ViewModels */,
 				5B78A9A429A3467300F2517C /* MapView.swift */,
 				5B78A99A29A343BC00F2517C /* Assets.xcassets */,
 				5B78A9B029A39B7700F2517C /* UndimmedSheet */,
@@ -91,6 +105,23 @@
 				5B78A9AC29A39B3700F2517C /* Ex+View.swift */,
 			);
 			path = UndimmedSheet;
+			sourceTree = "<group>";
+		};
+		5BC5A67129A6682000B3B9AC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5BC5A66B29A6663100B3B9AC /* LocationService.swift */,
+				5BC5A66F29A667FA00B3B9AC /* SearchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5BC5A67229A6682B00B3B9AC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				5BC5A66D29A6677D00B3B9AC /* MapConfig.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,13 +194,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC5A67029A667FA00B3B9AC /* SearchViewModel.swift in Sources */,
+				5BC5A66E29A6677D00B3B9AC /* MapConfig.swift in Sources */,
 				5B78A9AD29A39B3700F2517C /* Ex+View.swift in Sources */,
 				5B78A9A729A3977900F2517C /* UndimmedPresentationDetent.swift in Sources */,
 				5B78A99929A343BA00F2517C /* ContentView.swift in Sources */,
 				5B78A9AB29A3990B00F2517C /* Ex+Collection.swift in Sources */,
+				5BC5A67629A6687C00B3B9AC /* MapConfigSheetView.swift in Sources */,
+				5BC5A67429A6685000B3B9AC /* SearchSheetView.swift in Sources */,
 				5B78A9A529A3467300F2517C /* MapView.swift in Sources */,
 				5B78A9AF29A39B6600F2517C /* UndimmedDetentView.swift in Sources */,
 				5B78A9A929A398F100F2517C /* Ex+UISheetPresentationController.swift in Sources */,
+				5BC5A66C29A6663100B3B9AC /* LocationService.swift in Sources */,
 				5B78A99729A343BA00F2517C /* AppleMapGuruApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +338,7 @@
 				DEVELOPMENT_TEAM = SUDPP9C593;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱실행시 사용자 위치정보 사용을 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -331,6 +368,7 @@
 				DEVELOPMENT_TEAM = SUDPP9C593;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱실행시 사용자 위치정보 사용을 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -22,7 +22,7 @@ struct MapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView(frame: .zero)
         
-        mapView.layoutMargins = UIEdgeInsets(top: 30, left: 10, bottom: 30.0, right: 10)
+        mapView.layoutMargins = UIEdgeInsets(top: 20, left: 10, bottom: 30.0, right: 16)
         mapView.showsScale = true
         
         return mapView
